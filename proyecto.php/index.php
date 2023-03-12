@@ -1,5 +1,4 @@
 <?php require_once 'includes/cabecera.php'; ?>
-        <div id="contenedor">
     <!-- BARRA LATERAL -->  
 <?php require_once 'includes/lateral.php'; ?>        
     <!-- CAJA PRINCIPAL --> 
@@ -31,8 +30,6 @@
         </article>
         <div id="ver-todas">
             <a href="">Ver todas las entradas</a>
-        </div>  
-    </div>   
-        </div> <!-- FIN PRINCIPAL -->
-    <!-- PIE DE PAGINA -->
+        </div>    
+    </div> <!-- FIN PRINCIPAL -->
 <?php require_once 'includes/pie.php'; ?>  
