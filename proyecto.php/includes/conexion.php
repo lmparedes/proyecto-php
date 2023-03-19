@@ -28,5 +28,7 @@
             return $ipaddress;
         }
     }
+
+session_start();
 //	$dir_root = realpath($_SERVER["DOCUMENT_ROOT"]);
 ?>
