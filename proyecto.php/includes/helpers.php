@@ -7,9 +7,9 @@
     return $alerta;
     }
 
-    function BorrarErrores(){
+    /*function BorrarErrores(){
         $_SESSION['errores'] = null;
         $borrado = session_unset($_SESSION['errores']);
     return $borrado;
-    }
+    }*/
 ?>
