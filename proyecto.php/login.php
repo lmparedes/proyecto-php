@@ -2,8 +2,13 @@
 //iniciar la sesion y y la conexion a la bd
 require_once 'includes/conexion.php';
 session_start();
-//Recoger datos del formulario
+
 if(isset($_POST)){
+    //Borrar error antiguo
+     /*if(isset($_SESSION['error_login'])){
+             session_unset($_SESSION['error_login']);
+            }*/
+    //Recoger datos del formulario
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -19,16 +24,13 @@ if(isset($_POST)){
         if($verify){
             //utilizar una sesion para guardar los datos del usuario logeado
             $_SESSION['usuario'] = $usuario;
-            if(isset($_SESSION['errores']['error_login'])){
-             session_unset($_SESSION['error_login']);
-            }
         }else{
             //Si algo falla enviar una sesion con el fallo
-            $_SESSION['errores']['error_login'] = "Login incorrecto!!";
+            $_SESSION['error_login'] = "Login incorrecto!!";
         }
     }else{
             //Si algo falla enviar una sesion con el fallo
-            $_SESSION['errores']['error_login'] = "Login incorrecto!!";
+            $_SESSION['error_login'] = "Login incorrecto!!";
     }
 }
 header('Location: index.php');
