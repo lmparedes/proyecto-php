@@ -1,6 +1,23 @@
 <?php require_once 'includes/helpers.php'; ?>
 <?php session_start(); ?>
 <aside id="sidebar">
+  <?php if(isset($_SESSION['usuario'])): ?>
+  <div id ="usuario-logueado" class ="bloque">
+      <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'];?></h3>
+    </div>
+    <?php endif; ?>
+          <div id ="login" class ="bloque">
+            <h3>Identificate</h3>
+            <form action="login.php" method="POST">
+              <label for="email">Email</label>
+              <input type="email" name ="email" />
+
+              <label for="password">Contraseña</label>
+              <input type="password" name ="password" />
+
+              <input type="submit" value="Entrar" />
+            </form>
+          </div>
             <div id="register" class="bloque"> 
                 <h3>Registrate</h3>
                 <!--Mostrar errores-->
