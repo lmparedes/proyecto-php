@@ -22,4 +22,16 @@
         }
         return $result;
     }
+
+    function conseguirUltimasEntradas($conexion){
+        $sql = "SELECT e.* FROM entradas e
+                INNER JOIN categorias c on c.id = e.categoria_id
+                ORDER BY e.id DESC LIMIT 4";
+        $entradas = mysqli_query($conexion, $sql);
+        $result = array();
+        if($entradas && mysqli_num_rows($entradas) >= 1){
+            $result = $entradas;
+        }
+        return $entradas;
+    }
 ?>
