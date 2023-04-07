@@ -10,6 +10,8 @@
       <a href="cerrar.php" class='boton-rojo'>Cerrar sesion</a>
     </div>
     <?php endif; ?>
+
+     <?php if(!isset($_SESSION['usuario'])): ?>
           <div id ="login" class ="bloque">
             <h3>Identificate</h3>
 
@@ -61,4 +63,5 @@
                     <input type="submit" name="submit" value="Registrar" />
                 </form> 
             </div>
+            <?php endif; ?>
         </aside>
