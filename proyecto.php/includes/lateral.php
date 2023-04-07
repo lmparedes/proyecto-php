@@ -1,4 +1,3 @@
-<?php require_once 'includes/helpers.php'; ?>
 <?php session_start(); ?>
 <aside id="sidebar">
   <?php if(isset($_SESSION['usuario'])): ?>
@@ -6,8 +5,9 @@
       <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'];?></h3>
       <!--botones-->
       <a href="cerrar.php" class='boton-naranja'>Crear entradas</a>
+      <a href="cerrar.php" class='boton'>Crear categoria</a>
       <a href="cerrar.php" class='boton-verde'>Mis datos</a>
-      <a href="cerrar.php" class='boton'>Cerrar sesion</a>
+      <a href="cerrar.php" class='boton-rojo'>Cerrar sesion</a>
     </div>
     <?php endif; ?>
           <div id ="login" class ="bloque">
