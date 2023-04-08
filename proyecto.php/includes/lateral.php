@@ -3,7 +3,7 @@
   <div id ="usuario-logueado" class ="bloque">
       <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'];?></h3>
       <!--botones-->
-      <a href="cerrar.php" class='boton-naranja'>Crear entradas</a>
+      <a href="crear-entradas.php" class='boton-naranja'>Crear entradas</a>
       <a href="crear-categorias.php" class='boton'>Crear categoria</a>
       <a href="cerrar.php" class='boton-verde'>Mis datos</a>
       <a href="cerrar.php" class='boton-rojo'>Cerrar sesion</a>
