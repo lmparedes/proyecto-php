@@ -5,7 +5,7 @@
     <div id="principal">
         <h1>Ultimas entradas</h1>
         <?php 
-            $entradas = conseguirUltimasEntradas($db);
+            $entradas = conseguirTodasEntradas($db);
             if(!empty($entradas)):
                 while($entrada = mysqli_fetch_assoc($entradas)):  
         ?>
@@ -21,9 +21,6 @@
         <?php
                 endwhile;
             endif;
-        ?>
-        <div id="ver-todas">
-            <a href="entradas.php">Ver todas las entradas</a>
-        </div>    
+        ?> 
     </div> <!-- FIN PRINCIPAL -->
 <?php require_once 'includes/pie.php'; ?>  
