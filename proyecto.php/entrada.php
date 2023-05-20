@@ -15,9 +15,13 @@
         <a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">
             <h2><?=$entrada_actual['categoria']?></h2>
         </a>
-        <h3><?=$entrada_actual['fecha']?></h3>
+        <h3><?=$entrada_actual['fecha']?> | <?=$entrada_actual['usuario']?></h3>
         <p>
             <?=$entrada_actual['descripcion']?>
         </p>
+        <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']): ?>
+            <a href="editar-entrada.php" class='boton-naranja'>Editar entradas</a>
+            <a href="borra-entrada.php" class='boton'>Eliminar categoria</a>
+        <?php endif; ?>
     </div> <!-- FIN PRINCIPAL -->
 <?php require_once 'includes/pie.php'; ?>  
