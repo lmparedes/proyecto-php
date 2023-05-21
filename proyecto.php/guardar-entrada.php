@@ -25,8 +25,8 @@ if(isset($_POST)){
             $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
             $guardar = mysqli_query($db, $sql);
 
-            var_dump(mysqli_error($db));
-            die();
+            //var_dump(mysqli_error($db));
+            //die();
         }else{
             $_SESSION['errores_entrada'] = $errores;
         }

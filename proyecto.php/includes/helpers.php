@@ -72,13 +72,12 @@
 
         function conseguirTodasEntradas($conexion, $categoria = null){
         $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e
-                INNER JOIN categorias c on c.id = e.categoria_id";
+                INNER JOIN categorias c on c.id = e.categoria_id
+                WHERE e.categoria_id = $categoria ORDER BY e.id DESC";
         $result = array();
-        if(!empty($categoria) && is_int($categoria)){
-            $sql = "SELECT e.*, c.nombre as 'categoria' FROM entradas e
-                    INNER JOIN categorias c on c.id = e.categoria_id
-                    WHERE e.categoria_id = $categoria ORDER BY e.id DESC;";
-        }
+        /*if(!empty($categoria) && is_int($categoria)){
+            $sql = "WHERE e.categoria_id = $categoria ORDER BY e.id DESC";
+        }*/
         $entradas = mysqli_query($conexion, $sql);
         if($entradas && mysqli_num_rows($entradas) >= 1){
             $result = $entradas;
